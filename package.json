@@ -1,0 +1,41 @@
+{
+  "type": "module",
+  "devDependencies": {
+    "@commitlint/cli": "^19.3.0",
+    "@commitlint/config-conventional": "^19.2.2",
+    "@eslint/js": "^9.8.0",
+    "@stylistic/eslint-plugin": "^2.6.1",
+    "@types/eslint__js": "^8.42.3",
+    "@typescript-eslint/eslint-plugin": "^8.0.0",
+    "@typescript-eslint/parser": "^8.0.0",
+    "@vue/tsconfig": "^0.5.1",
+    "autoprefixer": "^10.4.20",
+    "cssnano": "^7.0.4",
+    "eslint": "^9.8.0",
+    "eslint-plugin-simple-import-sort": "^12.1.1",
+    "eslint-plugin-tailwindcss": "^3.17.4",
+    "eslint-plugin-vue": "^9.27.0",
+    "lint-staged": "^15.2.8",
+    "postcss": "^8.4.40",
+    "simple-git-hooks": "^2.11.1",
+    "tailwindcss": "^3.4.7",
+    "typescript": "^5.5.4",
+    "typescript-eslint": "^8.0.0",
+    "vitepress": "^1.3.1",
+    "vue": "^3.4.35",
+    "vue-eslint-parser": "^9.4.3"
+  },
+  "packageManager": "pnpm@9.6.0+sha512.38dc6fba8dba35b39340b9700112c2fe1e12f10b17134715a4aa98ccf7bb035e76fd981cf0bb384dfa98f8d6af5481c2bef2f4266a24bfa20c34eb7147ce0b5e",
+  "scripts": {
+    "docs:dev": "vitepress dev",
+    "docs:build": "vitepress build",
+    "docs:preview": "vitepress preview"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm lint-staged",
+    "commit-msg": "npx commitlint --edit ${1}"
+  },
+  "lint-staged": {
+    "*": "pnpm dlx eslint --max-warnings 0 --no-warn-ignored"
+  }
+}
