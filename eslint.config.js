@@ -21,6 +21,14 @@ export default tseslint.config(
   ...tailwind.configs['flat/recommended'],
 
   {
+    settings: {
+      tailwindcss: {
+        whitelist: ['link'],
+      },
+    },
+  },
+
+  {
     languageOptions: {
       parser: vueParser,
       parserOptions: {
@@ -35,6 +43,7 @@ export default tseslint.config(
     rules: {
       'simple-import-sort/imports': 'error',
       'simple-import-sort/exports': 'error',
+      'tailwindcss/classnames-order': ['error', { callees: ['twMerge'] }],
       'vue/multi-word-component-names': 'off',
       'vue/html-self-closing': 'off',
       'vue/no-v-html': 'off',

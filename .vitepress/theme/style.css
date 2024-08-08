@@ -2,6 +2,52 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --color-text-default: #1f2328;
+  --color-text-muted: #636c76;
+  --color-text-link: #0969da;
+  --color-text-success: #1a7f37;
+  --color-text-on-emphasis: #fff;
+
+  --color-bg-app: #fff;
+  --color-bg-header: rgba(246, 248, 250, 0.85);
+  --color-bg-muted: #f6f8fa;
+  --color-bg-neutral-muted: #afb8c133;
+  --color-bg-accent-emphasis: #0969da;
+
+  --color-border-default: #d0d7de;
+  --color-border-muted: #d0d7deb3;
+  --color-border-accent-emphasis: #0969da;
+
+  --button-default-bgColor-rest: #f6f8fa;
+  --button-default-bgColor-hover: #eef1f4;
+  --button-default-borderColor-rest: #d0d7de;
+  --button-default-borderColor-hover: #d0d7de;
+}
+
+.dark {
+  --color-text-default: #c5d1de;
+  --color-text-muted: #778491;
+  --color-text-link: #478be6;
+  --color-text-success: #57ab5a;
+  --color-text-on-emphasis: #f0f6fc;
+
+  --color-bg-app: #22272e;
+  --color-bg-header: rgba(28, 33, 40, 0.85);
+  --color-bg-muted: #2d333b;
+  --color-bg-neutral-muted: #636e7b66;
+  --color-bg-accent-emphasis: #316dca;
+
+  --color-border-default: #444c56;
+  --color-border-muted: #444c56b3;
+  --color-border-accent-emphasis: #316dca;
+
+  --button-default-bgColor-rest: #373e47;
+  --button-default-bgColor-hover: #3d444e;
+  --button-default-borderColor-rest: #444c56;
+  --button-default-borderColor-hover: #444c56;
+}
+
 @layer base {
   /* Chinese quotes rendering fix. 中英文弯引号共享 Unicode 码位，确保引号使用中文字体渲染 */
   @font-face {
@@ -9,5 +55,15 @@
     src: local("PingFang SC Regular"), local("PingFang SC"), local("SimHei"),
       local("Source Han Sans SC");
     unicode-range: U+2018, U+2019, U+201C, U+201D; /* 分别是 ‘’“” */
+  }
+
+  html body {
+    @apply text-default bg-app antialiased;
+  }
+}
+
+@layer components {
+  .link {
+    @apply bg-transparent text-link underline underline-offset-[.2rem];
   }
 }
