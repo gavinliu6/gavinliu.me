@@ -84,6 +84,7 @@ typings/
 
 # pnpm link folder
 pnpm-global
+.pnpm-store/
 
 # dotenv environment variables file
 .env

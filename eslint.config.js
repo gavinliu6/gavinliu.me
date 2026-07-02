@@ -2,6 +2,7 @@
 
 import { defineConfig } from 'eslint/config'
 import js from '@eslint/js'
+import betterTailwindcss from 'eslint-plugin-better-tailwindcss'
 import eslintPluginVue from 'eslint-plugin-vue'
 import globals from 'globals'
 import stylistic from '@stylistic/eslint-plugin'
@@ -19,10 +20,16 @@ export default defineConfig(
       tseslint.configs.recommended,
       eslintPluginVue.configs['flat/recommended'],
       stylistic.configs.recommended,
+      betterTailwindcss.configs.recommended,
     ],
     languageOptions: {
       globals: {
         ...globals.browser,
+      },
+    },
+    settings: {
+      'better-tailwindcss': {
+        entryPoint: '.vitepress/theme/styles.css',
       },
     },
     plugins: {
