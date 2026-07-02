@@ -8,6 +8,7 @@ export interface ThemeConfig {}
 export default defineConfig<ThemeConfig>({
   title: 'Gavin Liu',
   description: 'My personal website',
+  srcDir: 'src',
 
   vite: {
     plugins: [tailwindcss()],
