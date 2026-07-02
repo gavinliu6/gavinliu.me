@@ -1,12 +1,14 @@
 // https://vitepress.dev/guide/custom-theme
-import Layout from './Layout.vue'
+import './styles.css'
+
 import type { Theme } from 'vitepress'
-import './style.css'
+
+import Layout from './Layout.vue'
 
 export default {
   Layout,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   enhanceApp({ app, router, siteData }) {
     // ...
-  }
+  },
 } satisfies Theme
-
