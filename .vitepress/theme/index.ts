@@ -1,9 +1,10 @@
 // https://vitepress.dev/guide/custom-theme
 import './styles.css'
+import './typography.css'
 
 import type { Theme } from 'vitepress'
 
-import Layout from './Layout.vue'
+import Layout from './components/layouts/Layout.vue'
 
 export default {
   Layout,
