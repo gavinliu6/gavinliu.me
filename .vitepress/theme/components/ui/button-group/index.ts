@@ -1,0 +1,38 @@
+import type { VariantProps } from 'class-variance-authority'
+import { cva } from 'class-variance-authority'
+
+export { default as ButtonGroup } from './ButtonGroup.vue'
+export { default as ButtonGroupSeparator } from './ButtonGroupSeparator.vue'
+export { default as ButtonGroupText } from './ButtonGroupText.vue'
+
+export const buttonGroupVariants = cva(
+  `
+    isolate flex w-fit items-stretch
+    *:relative
+    *:focus-visible:z-10
+    has-[>[data-slot=button-group]]:gap-2
+    has-[select[aria-hidden=true]:last-child]:[&>[data-slot=select-trigger]:last-of-type]:rounded-r-[6px]
+    [&>[data-slot=select-trigger]:not([class*='w-'])]:w-fit
+    [&>input]:flex-1
+  `,
+  {
+    variants: {
+      orientation: {
+        horizontal: `
+          [&>*:not(:first-child)]:rounded-l-none
+          [&>*:not(:last-child)]:rounded-r-none
+        `,
+        vertical: `
+          flex-col
+          [&>*:not(:first-child)]:rounded-t-none
+          [&>*:not(:last-child)]:rounded-b-none
+        `,
+      },
+    },
+    defaultVariants: {
+      orientation: 'horizontal',
+    },
+  }
+)
+
+export type ButtonGroupVariants = VariantProps<typeof buttonGroupVariants>

@@ -1,0 +1,33 @@
+<script setup lang="ts">
+import { cn } from '@theme/lib/utils'
+import { reactiveOmit } from '@vueuse/core'
+import type { DropdownMenuLabelProps } from 'reka-ui'
+import { DropdownMenuLabel, useForwardProps } from 'reka-ui'
+import type { HTMLAttributes } from 'vue'
+
+const props = defineProps<
+  DropdownMenuLabelProps & { class?: HTMLAttributes['class'], inset?: boolean }
+>()
+
+const delegatedProps = reactiveOmit(props, 'class', 'inset')
+const forwardedProps = useForwardProps(delegatedProps)
+</script>
+
+<template>
+  <DropdownMenuLabel
+    data-slot="dropdown-menu-label"
+    :data-inset="inset ? '' : undefined"
+    v-bind="forwardedProps"
+    :class="
+      cn(
+        `
+          px-2 pt-1.5 pb-1 text-button-12 text-secondary
+          data-inset:pl-8
+        `,
+        props.class,
+      )
+    "
+  >
+    <slot />
+  </DropdownMenuLabel>
+</template>
