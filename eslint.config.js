@@ -26,6 +26,10 @@ export default defineConfig(
       globals: {
         ...globals.browser,
       },
+      parserOptions: {
+        parser: tseslint.parser,
+        extraFileExtensions: ['.vue'],
+      },
     },
     settings: {
       'better-tailwindcss': {
@@ -37,9 +41,18 @@ export default defineConfig(
     },
     rules: {
       'vue/multi-word-component-names': 'off',
+      'vue/html-self-closing': 'off',
+      'vue/require-default-prop': 'off',
 
       'simple-import-sort/exports': 'error',
       'simple-import-sort/imports': 'error',
+
+      'better-tailwindcss/no-unknown-classes': [
+        'error',
+        {
+          ignore: ['^markdown-body$'],
+        },
+      ],
 
       '@stylistic/brace-style': ['error', '1tbs', { allowSingleLine: true }],
       '@stylistic/comma-dangle': [

@@ -1,6 +1,10 @@
 allowBuilds:
   esbuild: true
   simple-git-hooks: true
+  vue-demi: true
+
+minimumReleaseAgeExclude:
+  - eslint@10.7.0
 
 overrides:
   jiti: 2.7.0
