@@ -149,13 +149,13 @@ _This is italic text_
 
 ```md
 - 19^th^
-- H~~2~~O
+- H~2~O
 ```
 
 **Output:**
 
 - 19^th^
-- H~~2~~O
+- H~2~O
 
 ### Mark
 
