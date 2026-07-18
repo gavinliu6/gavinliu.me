@@ -3,8 +3,12 @@ import { ArrowUpRightIcon } from '@lucide/vue'
 import { cn, isActive } from '@theme/lib/utils'
 import { useData } from 'vitepress'
 
-import { Avatar, AvatarFallback, AvatarImage } from '../ui/avatar'
-import { Tooltip, TooltipContent, TooltipTrigger } from '../ui/tooltip'
+import { Avatar, AvatarFallback, AvatarImage } from '../components/ui/avatar'
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger
+} from '../components/ui/tooltip'
 
 // https://vitepress.dev/reference/runtime-api#usedata
 const { page } = useData()
@@ -30,7 +34,7 @@ const { page } = useData()
         <Avatar
           class="
             size-7.5 rotate-5 rounded-lg transition-transform duration-200
-            ease-out
+            ease-out select-none
             group-hover:rotate-0
             group-active:scale-95
             after:rounded-lg

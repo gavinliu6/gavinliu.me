@@ -4,6 +4,7 @@ import { createContentLoader } from 'vitepress'
 export interface Post {
   title: string
   url: string
+  ogImage: string
   date: {
     time: number
     iso: string
@@ -22,6 +23,7 @@ export default createContentLoader('blog/*.md', {
       .map(({ url, frontmatter }) => ({
         title: frontmatter.title,
         url,
+        ogImage: `/og/${url.split('/').filter(Boolean).at(-1)}.webp`,
         date: formatDate(frontmatter.date),
       }))
       .sort((a, b) => b.date.time - a.date.time)

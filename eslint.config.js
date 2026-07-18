@@ -11,7 +11,12 @@ import tseslint from 'typescript-eslint'
 
 export default defineConfig(
   {
-    ignores: ['eslint.config.js', 'prettier.config.js', '.vitepress/dist/**'],
+    ignores: [
+      'eslint.config.js',
+      'prettier.config.js',
+      '.vitepress/cache/**',
+      '.vitepress/dist/**',
+    ],
   },
   {
     files: ['**/*.{js,ts,mts,vue}'],
@@ -50,7 +55,7 @@ export default defineConfig(
       'better-tailwindcss/no-unknown-classes': [
         'error',
         {
-          ignore: ['^markdown-body$'],
+          ignore: ['^markdown-body$', '^home$'],
         },
       ],
 

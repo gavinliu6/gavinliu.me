@@ -1,4 +1,4 @@
 ---
 blog: true
-title: Blog - Gavin Liu
+title: Blog
 ---

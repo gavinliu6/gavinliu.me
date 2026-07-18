@@ -1,14 +1,13 @@
 <script setup lang="ts">
+import CopyPageDropdown from '@theme/components/CopyPageDropdown.vue'
+import ExpandPageBtn from '@theme/components/ExpandPageBtn.vue'
+import GiscusComments from '@theme/components/GiscusComments.vue'
+import Toc from '@theme/components/Toc.vue'
 import { cn } from '@theme/lib/utils'
 import { useStorage } from '@vueuse/core'
 import dayjs from 'dayjs'
 import { useData } from 'vitepress'
 import { computed } from 'vue'
-
-import CopyPageDropdown from '../CopyPageDropdown.vue'
-import ExpandPageBtn from '../ExpandPageBtn.vue'
-import GiscusComments from '../GiscusComments.vue'
-import Toc from '../Toc.vue'
 
 // https://vitepress.dev/reference/runtime-api#usedata
 const { frontmatter, page } = useData()

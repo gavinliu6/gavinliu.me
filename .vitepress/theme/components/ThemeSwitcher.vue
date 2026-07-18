@@ -4,6 +4,16 @@ import { onBeforeUnmount, onMounted, ref } from 'vue'
 
 type Theme = 'system' | 'light' | 'dark'
 
+interface Props {
+  glass?: boolean
+  small?: boolean
+}
+
+const props = withDefaults(defineProps<Props>(), {
+  glass: false,
+  small: false,
+})
+
 const appearanceKey = 'vitepress-theme-appearance'
 const themes: Theme[] = ['system', 'light', 'dark']
 const selectedTheme = ref<Theme>('system')
@@ -53,9 +63,11 @@ onBeforeUnmount(() => {
 
 <template>
   <fieldset
+    :data-small="props.small || undefined"
     class="
-      isolate m-0 flex h-6 w-fit rounded-full border-0 p-0
+      isolate m-0 flex h-8 w-fit rounded-full border-0 p-0
       shadow-[0_0_0_1px_var(--ds-gray-alpha-400)]
+      data-small:h-6
     "
   >
     <legend class="sr-only">
@@ -78,14 +90,21 @@ onBeforeUnmount(() => {
       />
       <label
         :for="`theme-switch-${theme}`"
+        :data-glass="props.glass || undefined"
+        :data-small="props.small || undefined"
         class="
-          relative m-0 flex size-6 cursor-pointer items-center justify-center
+          relative m-0 flex size-8 cursor-pointer items-center justify-center
           rounded-full bg-none text-gray-700
           peer-checked:bg-background-100 peer-checked:text-gray-1000
           peer-checked:shadow-[0_0_0_1px_var(--ds-gray-400),0px_1px_2px_0px_var(--ds-gray-alpha-100)]
           peer-focus-visible:text-gray-1000
           peer-focus-visible:shadow-[0_0_0_1px_var(--ds-background-100),0_0_0_2px_var(--ds-blue-700),0_0_0_4px_var(--ds-blue-300)]
           hover:text-gray-1000
+          data-glass:peer-checked:bg-white/85
+          data-glass:peer-checked:shadow-[0_0_0_1px_var(--ds-gray-alpha-400),0_1px_2px_rgba(0,0,0,0.08)]
+          data-small:size-6
+          dark:data-glass:peer-checked:bg-gray-alpha-300
+          dark:data-glass:peer-checked:shadow-[0_0_0_1px_var(--ds-gray-alpha-500),0_1px_2px_rgba(0,0,0,0.18)]
         "
       >
         <span class="sr-only">{{ theme }}</span>

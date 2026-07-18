@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import ThemeSwitcher from '../ThemeSwitcher.vue'
+import ThemeSwitcher from '@theme/components/ThemeSwitcher.vue'
 
 const currentYear = new Date().getFullYear()
 </script>
@@ -16,7 +16,7 @@ const currentYear = new Date().getFullYear()
         &copy; {{ currentYear }} Gavin Liu. All rights reserved.
       </p>
 
-      <ThemeSwitcher />
+      <ThemeSwitcher small />
     </div>
   </footer>
 </template>

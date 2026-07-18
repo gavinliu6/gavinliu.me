@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 
-import { data as posts, type Post } from '../../posts.data'
+import { data as posts, type Post } from '../posts.data'
 
 interface PostGroup {
   year: number

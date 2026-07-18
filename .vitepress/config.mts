@@ -7,16 +7,21 @@ import MarkdownItSub from 'markdown-it-sub'
 import MarkdownItSup from 'markdown-it-sup'
 import { defineConfig } from 'vitepress'
 
+import { buildSocialMetadata } from './build-social-metadata'
+
 // eslint-disable-next-line @typescript-eslint/no-empty-object-type
 export interface ThemeConfig {}
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig<ThemeConfig>({
-  title: 'Gavin Liu',
-  titleTemplate: ':title',
+  title: 'Hey! 👋',
+  titleTemplate: ':title — Gavin Liu',
   description: 'My personal website',
   srcDir: 'src',
   cleanUrls: true,
+  transformPageData(pageData) {
+    buildSocialMetadata(pageData)
+  },
   head: [
     [
       'link',

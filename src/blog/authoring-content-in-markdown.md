@@ -1,6 +1,6 @@
 ---
 title: Authoring content in Markdown
-date: 2026-07-08T00:00-08:00
+date: '2026-07-08T00:00-08:00'
 ---
 
 > [!NOTE]
@@ -134,12 +134,12 @@ _This is italic text_
 **Input:**
 
 ```md
-![Alt text](/example.png)
+![Alt text](./assets/example.png)
 ```
 
 **Output:**
 
-![Alt text](/example.png)
+![Alt text](./assets/example.png)
 
 ## Plugins
 

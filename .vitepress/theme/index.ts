@@ -4,7 +4,7 @@ import './typography.css'
 
 import type { Theme } from 'vitepress'
 
-import Layout from './components/layouts/Layout.vue'
+import Layout from './layouts/Layout.vue'
 
 export default {
   Layout,
