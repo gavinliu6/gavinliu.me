@@ -50,6 +50,15 @@ export default defineConfig<ThemeConfig>({
       },
     ],
     ['link', { rel: 'manifest', href: '/site.webmanifest' }],
+    [
+      'script',
+      {
+        'defer': '',
+        'src': 'https://cloud.umami.is/script.js',
+        'data-website-id': '400e9ddb-301a-435b-b2f2-7baa18bd7b5b',
+        'data-domains': 'gavinliu.me',
+      },
+    ],
   ],
 
   vite: {
