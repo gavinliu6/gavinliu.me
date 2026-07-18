@@ -25,7 +25,7 @@ const copied = ref(false)
 const copying = ref(false)
 const markdownSourceUrl = computed(
   () =>
-    `https://raw.githubusercontent.com/gavinliu6/gavinliu.me/main/src/${props.page.relativePath}`
+    `https://raw.githubusercontent.com/gavinliu6/gavinliu.me/refs/heads/main/src/${props.page.relativePath}`
 )
 const copyFeedbackDuration = 2000
 
@@ -105,7 +105,7 @@ async function copyPage() {
       <DropdownMenuContent align="end">
         <DropdownMenuItem as-child>
           <a
-            :href="`/${page.filePath}`"
+            :href="markdownSourceUrl"
             target="_blank"
             rel="noopener noreferrer"
           >
