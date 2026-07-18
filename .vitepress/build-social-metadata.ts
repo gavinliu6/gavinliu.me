@@ -6,10 +6,8 @@ const DEFAULT_OG_IMAGE = '/og/fallback.webp'
 export function buildSocialMetadata(pageData: PageData): void {
   if (pageData.isNotFound) return
 
-  const title = pageData.frontmatter.home
-    ? 'My personal website — Gavin Liu'
-    : pageData.title
-  const description = pageData.description || title
+  const title = pageData.frontmatter.home ? 'Gavin Liu' : pageData.title
+  const description = pageData.description || 'My personal website'
   const isArticlePage = pageData.relativePath.startsWith('blog/')
   const pagePath = pageData.relativePath
     .replace(/(^|\/)index\.md$/, '$1')
