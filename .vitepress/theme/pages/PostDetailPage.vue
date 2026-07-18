@@ -120,7 +120,9 @@ const tocHeaders = computed(() =>
           <article class="markdown-body text-copy-16">
             <Content />
           </article>
-          <GiscusComments class="mt-16" />
+          <div class="mt-16">
+            <GiscusComments />
+          </div>
         </div>
       </div>
     </div>
