@@ -14,7 +14,7 @@ import { BentoItem } from '@theme/components/ui/bento-grid'
     "
   >
     <img
-      src="https://github-stats-extended.vercel.app/api?username=gavinliu6&rank_icon=github&hide_title=true&show_icons=true&hide_border=true&theme=gruvbox&bg_color=00000000&disable_animations=true"
+      src="https://raw.githubusercontent.com/gavinliu6/gavinliu6/refs/heads/main/profile/stats.svg"
       alt="GitHub statistics for Gavin Liu"
       class="h-full w-auto"
     />
