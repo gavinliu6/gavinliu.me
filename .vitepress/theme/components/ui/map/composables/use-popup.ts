@@ -1,4 +1,5 @@
-import MapLibreGL, { type PopupOptions } from 'maplibre-gl'
+import type { PopupOptions } from 'maplibre-gl'
+import * as MapLibreGL from 'maplibre-gl'
 import type { MaybeRefOrGetter } from 'vue'
 import { onBeforeUnmount, shallowRef, toValue, watch } from 'vue'
 

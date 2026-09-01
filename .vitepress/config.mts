@@ -7,7 +7,7 @@ import MarkdownItSub from 'markdown-it-sub'
 import MarkdownItSup from 'markdown-it-sup'
 import { defineConfig } from 'vitepress'
 
-import { buildSocialMetadata } from './build-social-metadata'
+import { buildSocialMetadata } from './build-social-metadata.ts'
 
 // eslint-disable-next-line @typescript-eslint/no-empty-object-type
 export interface ThemeConfig {}
@@ -63,6 +63,13 @@ export default defineConfig<ThemeConfig>({
 
   vite: {
     plugins: [tailwindcss()],
+
+    optimizeDeps: {
+      // maplibre-gl v6 resolves its worker via `new URL('./maplibre-gl-worker.mjs',
+      // import.meta.url)`. Pre-bundling rewrites import.meta.url into the dep cache
+      // directory, where that sibling file does not exist.
+      exclude: ['maplibre-gl'],
+    },
   },
 
   markdown: {

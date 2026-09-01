@@ -7,7 +7,10 @@ import type {
   ProjectionSpecification,
   StyleSpecification
 } from 'maplibre-gl'
-import MapLibreGL from 'maplibre-gl'
+import * as MapLibreGL from 'maplibre-gl'
+// maplibre-gl v6 loads its worker from a sibling `maplibre-gl-worker.mjs`, which
+// no bundler emits on its own. Let Vite build it as a worker so the URL resolves.
+import maplibreWorkerUrl from 'maplibre-gl/dist/maplibre-gl-worker.mjs?worker&url'
 import type { HTMLAttributes } from 'vue'
 import {
   computed,
@@ -56,6 +59,8 @@ const defaultStyles = {
   dark: 'https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json',
   light: 'https://basemaps.cartocdn.com/gl/positron-gl-style/style.json',
 }
+
+MapLibreGL.setWorkerUrl(maplibreWorkerUrl)
 
 const containerRef = useTemplateRef<HTMLDivElement>('container')
 const mapInstance = shallowRef<MapLibreGL.Map | null>(null)

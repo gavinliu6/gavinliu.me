@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { MarkerOptions } from 'maplibre-gl'
-import MapLibreGL from 'maplibre-gl'
+import * as MapLibreGL from 'maplibre-gl'
 import {
   onBeforeUnmount,
   onMounted,
