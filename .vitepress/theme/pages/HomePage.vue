@@ -7,6 +7,7 @@ import {
   LifeCard,
   MapCard,
   ThemeSwitcherCard,
+  WebProductCard,
   XCard
 } from '@theme/components/bento-cards'
 import {
@@ -97,6 +98,21 @@ import { BentoGrid } from '@theme/components/ui/bento-grid'
             <MapCard />
             <EmailCard />
             <ThemeSwitcherCard />
+          </BentoGrid>
+        </section>
+        <section aria-labelledby="build-title">
+          <h2
+            id="build-title"
+            class="p-4 text-heading-20 text-[18px]!"
+          >
+            What I build
+          </h2>
+          <BentoGrid>
+            <WebProductCard
+              title="Geebox - An all-in-one directory for OPCs"
+              image="https://geebox.best/og.png"
+              href="https://geebox.best"
+            />
           </BentoGrid>
         </section>
       </div>
