@@ -3,7 +3,6 @@ import { ArrowUpRightIcon } from '@lucide/vue'
 import {
   EmailCard,
   GitHubStatsCard,
-  LatestPostCard,
   LifeCard,
   MapCard,
   ThemeSwitcherCard,
@@ -91,7 +90,6 @@ import { BentoGrid } from '@theme/components/ui/bento-grid'
             Around the Web
           </h2>
           <BentoGrid>
-            <LatestPostCard />
             <XCard />
             <LifeCard />
             <GitHubStatsCard />
