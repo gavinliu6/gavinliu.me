@@ -22,8 +22,6 @@ onMounted(() => {
 
 <template>
   <BentoItem
-    :col-span="2"
-    :row-span="2"
     class="
       relative isolate overflow-hidden rounded-2xl bg-background-100
       shadow-[0_0_0_1px_var(--ds-gray-alpha-400)]
