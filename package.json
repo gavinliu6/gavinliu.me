@@ -27,6 +27,9 @@
   },
   "devDependencies": {
     "@cloudflare/vite-plugin": "^1.26.0",
+    "@commitlint/cli": "^21.2.2",
+    "@commitlint/config-conventional": "^21.2.2",
+    "@stylistic/eslint-plugin": "^5.10.0",
     "@tanstack/devtools-vite": "latest",
     "@tanstack/eslint-config": "latest",
     "@tanstack/router-cli": "^1.132.0",
@@ -35,17 +38,21 @@
     "@types/react-dom": "^19.2.0",
     "@vitejs/plugin-react": "^6.0.1",
     "eslint": "^9.20.0",
+    "eslint-plugin-better-tailwindcss": "^4.7.0",
+    "eslint-plugin-simple-import-sort": "^14.0.0",
+    "lint-staged": "^17.5.1",
     "prettier": "^3.8.1",
+    "simple-git-hooks": "^2.14.0",
     "typescript": "^6.0.2",
     "vite": "^8.0.0",
     "wrangler": "^4.70.0"
   },
-  "pnpm": {
-    "onlyBuiltDependencies": [
-      "esbuild",
-      "lightningcss",
-      "sharp",
-      "workerd"
-    ]
+  "simple-git-hooks": {
+    "pre-commit": "pnpm exec lint-staged",
+    "commit-msg": "pnpm exec commitlint --edit ${1}"
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": "eslint --fix",
+    "*.{js,jsx,json}": "prettier --write"
   }
 }
